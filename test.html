@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery tablesorter 2.0 - Column reorder Widget</title>
+
+	<!-- jQuery -->
+	<script src="jquery-latest.min.js"></script>
+
+	<!-- Demo stuff -->
+	<link href="jq.css" rel="stylesheet" type="text/css">
+	<link href="theme.blue.css" rel="stylesheet" type="text/css">
+	<script src="prettify.js"></script>
+	<script src="docs.js"></script>
+
+	<!-- Tablesorter: theme -->
+	<link class="theme" rel="stylesheet" href="theme.blue.css">
+
+	<style id="css">.tablesorter-header.tablesorter-reorder-helper {
+	cursor: move;
+}
+.tablesorter-reorder-helper-bar {
+	width: 1px;
+	background: #000;
+}</style>
+
+	<!-- Tablesorter script: required -->
+	<script src="jquery.tablesorter.js"></script>
+	<script src="jquery.tablesorter.widgets.js"></script>
+
+	<script src="widget-reorder.js"></script>
+
+	<script id="js">$(function(){
+
+	$("table").tablesorter({
+		theme : 'blue',
+		widthFixed : true,
+		widgets: [ 'reorder', 'zebra', 'stickyHeaders', 'filter' ],
+		widgetOptions: {
+			reorder_axis        : 'x', // 'x' or 'xy'
+			reorder_delay       : 300,
+			reorder_helperClass : 'tablesorter-reorder-helper',
+			reorder_helperBar   : 'tablesorter-reorder-helper-bar',
+			reorder_noReorder   : 'reorder-false',
+			reorder_blocked     : 'reorder-block-left reorder-block-end',
+			reorder_complete    : null // callback
+		}
+	});
+
+}); </script>
+
+</head>
+<body>
+<blockquote>
+  <button onclick="myFunction()">Reset Categories</button> 
+<span style="font-size: 12px"> Type a query in the search box below the header to filter the results. </span></blockquote>
+<script>
+function myFunction() {
+    location.reload();
+}
+</script>
+<div id="main">
+  <table class="tablesorter">
+	<caption>&nbsp;</caption>
+	<thead>
+		<tr>
+			<th class="reorder-false reorder-block-left">Categories</th>
+			<th>AggieBuy</th>
+			<th>PCard</th>
+			<th>Purchase Order</th>
+			<th>Disbursement Voucher</th>
+			<th>Travel Card</th>
+			<th class="reorder-block-end">Other</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr><th><span class="reorder-false reorder-block-left">Categories</span></th><th>AggieBuy</th><th>PCard</th><th>Purchase Order</th><th>Disbursement Voucher</th><th>Travel Card</th><th><span class="reorder-block-end">Other</span></th></tr>
+	</tfoot>
+	<tbody>
+		<tr>
+		  <td width="40%" nowrap class="sortable" id="quarenta"><strong style="">Abstract or journal publication fee</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Advertisements  for recruitment, event, or promotion</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Alcohol<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Alcohol  for research or lab work (not for consumption)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Animals</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Audiovisual equipment & supplies supplies  (purchase)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Audiovisual equipment & supplies (rental)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Award, recognition or prize (for  employees)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Award or prize (for  non-employees)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Cell phone purchase (with  service plan)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center"><strong style="color: #C8700E">Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred - <a href="https://iet.ucdavis.edu/" title="iet" target="new">IET</a></strong></td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Books,  CDs, DVDs, or other published media</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Break  room supplies, such as coffee, cups, or water</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Break  room appliances, such as microwaves or coffee maker</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Building repair & alteration</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Cash  advances for travel or entertainment</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Catering  services for events<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">1</a></sup></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Certifications  &amp; exam associated with employment (no travel involved)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Charter  (boat, bus, shuttle, plane, etc.)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Computers  (desktop, laptop, peripheral)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Controlled substance</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Copy  or print (on campus)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred- <a href="http://reprographics.ucdavis.edu/" target="new">Repro Graphics</a></strong></td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Copy  or print (off campus)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Donations to non-profits<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	    </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Employee clothing or uniform</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Entertainment</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Equipment  less than $4999 without a signed agreement</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Equipment  more than $4999<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">1</a></sup></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Equipment repair on equipment not owned by UCD<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">1</a></sup></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Flower  Arrangement (e.g. decor for University function)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Flower  Arrangement (recognition or sympathy)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a><a href="#asterisk"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Gasoline  (personal)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #448E15;"><strong>Preferred- <a href="https://afs.ucdavis.edu/our_services/travel-e-entertainment/travel/mileage.html" target="_blank">AggieTravel w/mileage</a></strong></td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Gasoline  (UC vehicle)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #448E15;"><strong>Preferred- <a href="http://fleet.ucdavis.edu/dispatch/otherServices" target="new">Fleet Card</a></strong></td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Gifts  (employees)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Gifts  (non employees)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Giftcards<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Honorarium - speaker or lecturer<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Independent Contractor and Consultant</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Insurance premium or payment</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>License  (professional)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Maintenance service agreement</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Marketing or promotional material</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Membership dues for a    professional or technical organization</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Moving  service for an office or lab</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Office furniture & accessories</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Permit  (fees)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">1</a></sup></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Postage  (Davis/Campus/Med  Center)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #448E15;"><strong>Preferred- <a href="http://afs.ucdavis.edu/our_services/distribution-services/mail-services/index.html" target="new">Mail Services</a></strong></td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Postage  (remote locations)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Precious metal</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Programmatic  event or expense (also see in Travel &amp; Entertainment)<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html" target="same"></a><a href="https://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart.html" target="same"></a></strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Radioactive material</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Registration  (conference or seminar without travel)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td class="sortable" id="quarenta3"><strong>Rentals  of rooms for entertainment or business meetings<sup><a href="http://afs.ucdavis.edu/our_services/account_payable/procurement-card/chart1.html#top" target="same">2</a></sup></strong></td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Registration  (conference or seminar with travel)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Research  Participant compensation (clinical trials or human subject)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Scholarship or fellowship</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Service requiring a contract</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Software  (off the shelf &amp; digital, no signed license agreement) agreement</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Software  (requiring signed license agreement)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Sponsorship</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Subscription  (professional &amp; technical print or online; journal, periodical, magazine or  newspaper)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Supplies  (instructional, office, classroom, custodial, or landscaping)</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align:  center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Temporary labor staffing</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #448E15;"><strong>Preferred- <a href="http://hr.ucdavis.edu/recruitment/tes/" target="new">Temp Services</a></strong></td>
+	  </tr>
+		<tr>
+		  <td class="sortable" id="quarenta2"><strong>Utility  bills (water, electric, etc.)</strong></td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed</strong></td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+		  <td class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Vehicle lease or purchase</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+	  </tr>
+		<tr>
+		  <td width="40%" class="sortable" id="quarenta"><strong>Visa international travel</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center">&nbsp;</td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #138E16;"><strong>Preferred</strong></td>
+		  <td width="10%" class="sortable" style="text-align: center; color: #C8700E;"><strong>Allowed- <a href="http://afs.ucdavis.edu/systems/aggie-travel/index.html" target="new">AggieTravel</a></strong></td>
+	  </tr>
+<!--
+		<tr><td>student23</td><td>Mathematics</td><td>male</td><td>82</td><td>77</td><td>0</td><td>79</td></tr>
+		<tr><td>student24</td><td>Languages</td><td>female</td><td>100</td><td>91</td><td>13</td><td>82</td></tr>
+		<tr><td>student25</td><td>Mathematics</td><td>male</td><td>22</td><td>96</td><td>82</td><td>53</td></tr>
+		<tr><td>student26</td><td>Languages</td><td>female</td><td>37</td><td>29</td><td>56</td><td>59</td></tr>
+		<tr><td>student27</td><td>Mathematics</td><td>male</td><td>86</td><td>82</td><td>69</td><td>23</td></tr>
+		<tr><td>student28</td><td>Languages</td><td>female</td><td>44</td><td>25</td><td>43</td><td>1</td></tr>
+		<tr><td>student29</td><td>Mathematics</td><td>male</td><td>77</td><td>47</td><td>22</td><td>38</td></tr>
+		<tr><td>student30</td><td>Languages</td><td>female</td><td>19</td><td>35</td><td>23</td><td>10</td></tr>
+		<tr><td>student31</td><td>Mathematics</td><td>male</td><td>90</td><td>27</td><td>17</td><td>50</td></tr>
+		<tr><td>student32</td><td>Languages</td><td>female</td><td>60</td><td>75</td><td>33</td><td>38</td></tr>
+		<tr><td>student33</td><td>Mathematics</td><td>male</td><td>4</td><td>31</td><td>37</td><td>15</td></tr>
+		<tr><td>student34</td><td>Languages</td><td>female</td><td>77</td><td>97</td><td>81</td><td>44</td></tr>
+		<tr><td>student35</td><td>Mathematics</td><td>male</td><td>5</td><td>81</td><td>51</td><td>95</td></tr>
+		<tr><td>student36</td><td>Languages</td><td>female</td><td>70</td><td>61</td><td>70</td><td>94</td></tr>
+		<tr><td>student37</td><td>Mathematics</td><td>male</td><td>60</td><td>3</td><td>61</td><td>84</td></tr>
+		<tr><td>student38</td><td>Languages</td><td>female</td><td>63</td><td>39</td><td>0</td><td>11</td></tr>
+		<tr><td>student39</td><td>Mathematics</td><td>male</td><td>50</td><td>46</td><td>32</td><td>38</td></tr>
+		<tr><td>student40</td><td>Languages</td><td>female</td><td>51</td><td>75</td><td>25</td><td>3</td></tr>
+		<tr><td>student41</td><td>Mathematics</td><td>male</td><td>43</td><td>34</td><td>28</td><td>78</td></tr>
+		<tr><td>student42</td><td>Languages</td><td>female</td><td>11</td><td>89</td><td>60</td><td>95</td></tr>
+		<tr><td>student43</td><td>Mathematics</td><td>male</td><td>48</td><td>92</td><td>18</td><td>88</td></tr>
+		<tr><td>student44</td><td>Languages</td><td>female</td><td>82</td><td>2</td><td>59</td><td>73</td></tr>
+		<tr><td>student45</td><td>Mathematics</td><td>male</td><td>91</td><td>73</td><td>37</td><td>39</td></tr>
+		<tr><td>student46</td><td>Languages</td><td>female</td><td>4</td><td>8</td><td>12</td><td>10</td></tr>
+		<tr><td>student47</td><td>Mathematics</td><td>male</td><td>89</td><td>10</td><td>6</td><td>11</td></tr>
+		<tr><td>student48</td><td>Languages</td><td>female</td><td>90</td><td>32</td><td>21</td><td>18</td></tr>
+		<tr><td>student49</td><td>Mathematics</td><td>male</td><td>42</td><td>49</td><td>49</td><td>72</td></tr>
+		<tr><td>student50</td><td>Languages</td><td>female</td><td>56</td><td>37</td><td>67</td><td>54</td></tr>
+-->
+	</tbody>
+	</table>
+	<div class="next-up"></div>
+
+</div>
+</body>
+</html>
